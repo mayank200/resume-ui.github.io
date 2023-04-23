@@ -33,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient){
       }
     })
   ],
+  
   exports: [HeaderComponent, FooterComponent]
 })
 export class GeneralModule { }

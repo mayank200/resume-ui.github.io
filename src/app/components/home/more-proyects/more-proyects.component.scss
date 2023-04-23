@@ -38,9 +38,9 @@
             cursor: pointer;
 
             &:hover {
-                -webkit-transform: translateY(-5px);
-                -ms-transform: translateY(-5px);
-                transform: translateY(-5px);
+                -webkit-transform: translateY(-1rem);
+                -ms-transform: translateY(-1rem);
+                transform: translateY(-1rem);
             }
             &:hover, &:focus {
                 box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);

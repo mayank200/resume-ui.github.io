@@ -13,12 +13,6 @@ import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
-
-
 @NgModule({
   declarations: [
     HomeComponent,

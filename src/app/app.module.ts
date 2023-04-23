@@ -25,15 +25,12 @@ export function HttpLoaderFactory(http: HttpClient){
   ],
   imports: [
     BrowserAnimationsModule,
-
     HomeModule,
     GeneralModule,
-
     AnimateOnScrollModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
