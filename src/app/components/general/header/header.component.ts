@@ -60,6 +60,8 @@ export class HeaderComponent implements OnInit {
       let url = window.location.href;
 
       // Open a new window with the CV
+      let newurl = url + "/../assets/cv/resume.pdf";
+      newurl = newurl.replace('resume-ui/','');
       window.open(url + "/../assets/cv/resume.pdf", "_blank");
 
   }
