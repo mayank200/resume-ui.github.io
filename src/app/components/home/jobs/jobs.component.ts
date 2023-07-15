@@ -15,6 +15,16 @@ export class JobsComponent implements OnInit {
   ngOnInit(): void {
 
     this.jobs = [{
+      "Tab": "Talent Monk",
+      "Title": "Backend Developer",
+      "Date": "May 2023 - Present",
+      "Description": [
+        "Proficient in building scalable and robust server-side applications using Node.js and TypeScript.",
+        "Experienced in designing and implementing database schemas using Prisma and PostgreSQL.",
+        "Strong understanding of authentication, authorization, and security principles.",
+        "Familiar with cloud platforms like Azure for deploying and managing applications."
+      ]
+      },{
       "Tab": "Akal Infosys",
       "Title": "Fullstack Developer",
       "Date": "August 2021 - Present",
