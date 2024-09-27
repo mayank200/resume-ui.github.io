@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, HostListener, AfterViewInit } from '@angu
 import { Router } from '@angular/router';
 import {trigger, style, query, transition, stagger, animate } from '@angular/animations'
 import { TranslateService } from '@ngx-translate/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ThisReceiver } from '@angular/compiler';
 
 
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
   responsiveMenuVisible: Boolean = false;
   pageYPosition: number;
-  languageFormControl: FormControl= new FormControl();
+  languageFormControl: UntypedFormControl= new UntypedFormControl();
   cvName: string = "";
 
   constructor(
