@@ -11,27 +11,31 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HeaderComponent } from './components/general/header/header.component';
+import { FooterComponent } from './components/general/footer/footer.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    /* ArchiveComponent */
-  ],
+ declarations: [HeaderComponent, FooterComponent],
   imports: [
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
+    AnimateOnScrollModule,
+    AppComponent,
     HomeModule,
     GeneralModule,
     AnimateOnScrollModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    NgbNavModule,
+    // HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'en',
       loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
@@ -39,7 +43,8 @@ export function HttpLoaderFactory(http: HttpClient){
       }
     })
   ],
-  providers: [TranslateService],
-  bootstrap: [AppComponent]
+  providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())],
+  bootstrap: [AppComponent],
+  exports: [HeaderComponent, FooterComponent]
 })
 export class AppModule { }
